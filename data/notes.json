@@ -1,43 +1,8 @@
 {
   "notesArray": [
-    {
-      "title": "Test Title",
-      "text": "Test text"
-    },
-    {
-      "title": "Test Title",
-      "text": "Test text",
-      "id": "ykkyckpkkllv4g0x"
-    },
-    {
-      "title": "Test Title",
-      "text": "Test text",
-      "id": "ykkycn0kllv6eu1"
-    },
-    {
-      "title": "Test Title",
-      "text": "Test text",
-      "id": "ykkycn0kllv6eu1"
-    },
-    {
-      "title": "Test Title",
-      "text": "Test text",
-      "id": "ykkycjrokllv8wia"
-    },
-    {
-      "title": "Test Title",
-      "text": "happy",
-      "id": "ykkycjrokllv8wia"
-    },
-    {
-      "title": "Test Title",
-      "text": "happy",
-      "id": "ykkycnfokllvdqj9"
-    },
-    {
-      "title": "Test Title",
-      "text": "sad",
-      "id": "ykkycnfokllvdqj9"
-    }
-  ]
+{
+"title":"Test Title",
+"text":"Test text"
+}
+]
 }

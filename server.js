@@ -1,12 +1,13 @@
 
 // REQUIRED//
-const express = require('express');
 const fs = require('fs');
-const {notes}  = require('./data/notes')
+const express = require('express');
+const { notes }  = require('./data/notes.json')
 const app = express();
 const path = require('path');
 const PORT = process.env.PORT || 3001;
 const uniqid = require('uniqid');
+
 
 // ===================================//
 
@@ -17,8 +18,8 @@ app.use(express.json())
 
 
 function createNewNote(body, notesArray) {
-    const note = body    
-    notes.push(note)
+    const note = body 
+    notes.notesArray.push(note)
     fs.writeFileSync(
         path.join(__dirname, './data/notes.json'),
         JSON.stringify({ notesArray: notes }, null, 2)
@@ -43,10 +44,8 @@ app.get('/api/notes', (req,res)=>{
 
  app.post('/api/notes', (req, res) => {
     req.body.id = uniqID;
-    console.log(uniqID); 
     const note = createNewNote(req.body, notes);
-    console.log(req.body);
-    
+    console.log(req.body);    
 
     res.json(req.body); 
     
@@ -58,12 +57,9 @@ app.get('/api/notes', (req,res)=>{
 
 
 
-
-
 // ================LISTENER===================//
 
 app.listen(PORT, () =>
 {
     console.log(`API server now on port ${PORT}!`);
 })
-
