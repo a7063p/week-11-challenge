@@ -15,6 +15,10 @@ app.use(express.urlencoded({extended: true}))
 app.use(express.json())
 // =========================================//
 
+// Access Public folders//
+app.use(express.static('public'));
+//===============================//
+
 
 // FUNCTIONS//
 
@@ -31,29 +35,28 @@ function createNewNote(body, notes) {
 
 
 function deleteNotesUpdate(id, notes){
+  console.log('before update', notes);
   const deleteID = id
   const updatedArray =  notes.filter(del => del.id != deleteID);
-  console.log('updated array', updatedArray);
   notes=updatedArray
+  console.log('new notes', notes);
   
   console.log('Updated Notes Object', notes);
   fs.writeFileSync(
     path.join(__dirname, './data/notes.json'),
-    JSON.stringify({notes}, null , 2)
-);   
+    JSON.stringify({notes}, null , 2)    
+    );    
 
-  return updatedArray
+  return 
   
-}
-
+};
 
 // =========================================//
 
 
 // LINK HTML PATHS and GET Request//
 app.get('/', (req,res) => {
-    res.sendFile(path.join(__dirname, 'public', 'index.html'));
-    console.log(notes);    
+    res.sendFile(path.join(__dirname, 'public', 'index.html'));        
 });
 
 app.get('/notes', (req, res)=> {
@@ -70,28 +73,29 @@ app.get('/api/notes', (req,res)=>{
 
 // POST Request //
  app.post('/api/notes', (req, res) => {
+   
+  const uniqID = uniqid()
     req.body.id = uniqID;
     const note = createNewNote(req.body, notes);
     console.log(req.body);   
-  
- 
 
     res.json(req.body);     
  });
  
  //===========================================//
 
-//  DELETE Request //
+ //DELETE Request //
 app.delete('/api/notes/:id', (req, res)=>{
-  const getID = req.params.id;  
-  const deleteNote = deleteNotesUpdate(getID, notes)
+  const getID = req.params.id;    
+  const deleteNote = deleteNotesUpdate(getID, notes)  
   
-  res.json(req.params.id);
+  res.json(notes);
 });
 
 
-// Need to add event listener and add to save button to call//
- const uniqID = uniqid()
+
+
+
 
 // ================LISTENER===================//
 
