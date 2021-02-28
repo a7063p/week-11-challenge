@@ -45,7 +45,7 @@
 
 
   ## Contribute
-  Contributer privileges are open to ALL that want to positively contribute to this project
+  Contrbutor privileges are open to ALL that want to positively contribute to this project
 
   
   
