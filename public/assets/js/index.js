@@ -57,7 +57,7 @@ const renderActiveNote = () => {
     noteTitle.setAttribute('readonly', true);
     noteText.setAttribute('readonly', true);
     noteTitle.value = activeNote.title;
-    noteText.value = activeNote.title;
+    noteText.value = activeNote.text;
   } else {
     noteTitle.value = '';
     noteText.value = '';
@@ -70,6 +70,7 @@ const handleNoteSave = () => {
     text: noteText.value,
   };
   saveNote(newNote).then(() => {
+    
     getAndRenderNotes();
     renderActiveNote();
   });
@@ -96,14 +97,24 @@ const handleNoteDelete = (e) => {
 // Sets the activeNote and displays it
 const handleNoteView = (e) => {
   e.preventDefault();
-  activeNote = JSON.parse(e.target.parentElement.getAttribute('data-note'));
-  renderActiveNote();
+  for(let i=0; i < e.path.length; i++){
+    const element = e.path[i];
+    if(element.hasAttribute('data-note')) {
+      activeNote = JSON.parse(e.target.parentElement.getAttribute('data-note'));
+      renderActiveNote();
+      return;
+    }
+  }
+  
 };
 
 // Sets the activeNote to and empty object and allows the user to enter a new note
 const handleNewNoteView = (e) => {
   activeNote = {};
   renderActiveNote();
+  noteTitle.removeAttribute('readonly');
+  noteText.removeAttribute('readonly');
+  
 };
 
 const handleRenderSaveBtn = () => {
