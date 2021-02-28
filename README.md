@@ -2,9 +2,10 @@
   ![license](https://img.shields.io/badge/license-MIT-critical?./license/MIT)
 
   ## Description
-  * Links for screencastify video [screencastify](https://drive.google.com/file/d/11IPafuyeziyxnMC5_dBVT5fiOD6W2cJX/view)  
-  * Links for screencastify mp4 if original is blurry [mp4](https://drive.google.com/file/d/1zRCeHBg6zIN1tCKsc-AHoaOQRPai2Afp/view?usp=sharing)  
-  Generates a README file that is professional and consistent for your GIT repo and/or other applications
+  Note taker can be used to write and save notes. This application used an Express.js back end and will save and retrieve note data from a JSON file.  
+
+  * Link for Heroku Deployment [Heroku](https://weekly-challenge11-note-taker.herokuapp.com/)    
+  * Link for GitHub Repository [GitHub](https://github.com/a7063p/week-11-challenge.git)  
 
 
   ## Table of Contents
@@ -18,28 +19,33 @@
   
 
   ## Installation
-  This application requires the install on Node and NPM package inquirer
+  This application has been deployed to Heroku please use the [Heroku](https://weekly-challenge11-note-taker.herokuapp.com/) link for deployment
 
   ## Usage
-  Once system requirements are installed initiate the application through commandline interface node index 
+  Upon opening the application presented with a landing page with a link to a notes page. When you click on the "Get Started" button you will be presented with a page with existing notes listed in the left-hand column, plus empty fields to enter a new note title and the note’s text in the right-hand column. 
 
-  ![image](./image/test.PNG)  
+  When you enter a note title AND not text a SAVE Icon will appear in the upper right nav bar. When selecting "Save" your not will be saved and appear in the left-side column.
+
+  When you want to view the note in its entirety, click on the text in the left hand column and the note will appear in the right6 column.
+
+  ![image](./image/note_taker.PNG)  
   
   ## Languages  
   ![language](https://img.shields.io/badge/JavaScript-critical)  ![language](https://img.shields.io/badge/ES6-critical)  ![language](https://img.shields.io/badge/Node-critical)  
+  ![language](https://img.shields.io/badge/JavaScript-critical)  ![language](https://img.shields.io/badge/uniqid-critical)  ![language](https://img.shields.io/badge/Express-critical)    
  
 
   ## License
   ![license](https://img.shields.io/badge/license-MIT-critical)
   
-  This application currently is licensed with [MIT](./license/MIT.txt). 
-  Please click on the [link](./license/MIT.txt) to review all terms, definitions and conditions of use.
+  This application currently is licensed with MIT. 
+ 
 
   
 
 
   ## Contribute
-  Contributer privlages are open to ALL that want to positively contribute to this project
+  Contributer privileges are open to ALL that want to positively contribute to this project
 
   
   
